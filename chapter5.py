@@ -1,23 +1,14 @@
-largest  = None
+largest = None
 smallest = None
-while True :
-    num = input('Please Enter Your Number: ')
-    if num =='done' :
-        break
+while True:
+    num = input("Please Enter a Number: ")
+    if num == "done": break
     try:
-        num = int(num) 
-    except: 
-        print('Invalid Entry Please Try Again')
+        num = int(num)
+        if largest is None or largest < num: largest = num
+        if smallest is None or smallest > num: smallest = num
+    except:
+        print("Invalid input") 
         continue
-if largest is None:
-    largest = num
-    largest > num
-    print (largest)   
-
-if smallest is None:
-    smallest = num
-    smallest < num 
-    print (smallest)    
-
-print ('Maximum', largest)
-print ('Minimum',  smallest)   
+print('Maximum is', largest)
+print('Minimum is', smallest)       
