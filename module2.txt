@@ -255,3 +255,185 @@ print(result)
 # desired outcome may be to leave the numerator value intact. The
 # numerator value can be preserved by reassigning the denominator with 
 # the integer value of 1. The result would then equal the numerator.
+
+Built-in functions
+In the last video, we explored built-in functions in Python, including print(), type(), and str(). Built-in functions are functions that exist within Python and can be called directly. In this reading, you’ll explore these further and also learn about the sorted() function and max()and min() function. In addition, you'll review how to pass the output of one function into another function.
+
+
+print() 
+The print() function outputs a specified object to the screen. The print() function is one of the most commonly used functions in Python because it allows you to output any detail from your code.
+
+To use the print() function, you pass the object you want to print as an argument to the function. The print() function takes in any number of arguments, separated by a comma, and prints all of them. For example, you can run the following code that prints a string, a variable, another string, and an integer together:
+
+month = "September"
+print("Investigate failed login attempts during", month, "if more than", 100)
+
+output:
+Investigate failed login attempts during September if more than 100
+
+type()   
+The type() function returns the data type of its argument. The type() function helps you keep track of the data types of variables to avoid errors throughout your code. 
+
+To use it, you pass the object as an argument, and it returns its data type. It only accepts one argument. For example, you could specify type("security") or type(7).
+
+Passing one function into another
+When working with functions, you often need to pass them through print() if you want to output the data type to the screen. This is the case when using a function like type(). Consider the following code:
+
+print(type("This is a string"))
+
+output:
+<class 'str'>
+It displays str(), which means that the argument passed to the type() function is a string. This happens because the type() function is processed first and its output is passed as an argument to the print() function.
+
+str()
+The str() function can be used to convert any data type to a string. The str()function takes a single argument, which is the value that you want to convert to a string. The str() function will then return a string representation of the value.
+
+In this example, the str() function will convert the number 12 to a string. This will run the code and print the string representation of the number.
+
+number = 12
+string_representation = str(number)
+print(string_representation)
+
+output:
+12
+
+sorted()
+The sorted() function sorts the components of a list. The sorted() function also works on any iterable, like a string, and returns the sorted elements in a list. By default, it sorts them in ascending order. When given an iterable that contains numbers, it sorts them from smallest to largest; this includes iterables that contain numeric data as well as iterables that contain string data beginning with numbers. An iterable that contains strings that begin with alphabetic characters will be sorted alphabetically.
+
+The sorted() function takes an iterable, like a list or a string, as an input. So, for example, you can use the following code to sort the list of login sessions from shortest to longest:
+
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(sorted(time_list))
+
+output:
+[2, 12, 14, 19, 22, 32, 57]
+This displays the sorted list. 
+
+The sorted() function does not change the iterable that it sorts. The following code illustrates this:
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(sorted(time_list))
+print(time_list)
+
+The first print() function displays the sorted list. However, the second print() function, which does not include the sorted() function, displays the list as assigned to time_list in the first line of code.
+
+One more important detail about the sorted() function is that it cannot take lists or strings that have elements of more than one data type. For example, you can’t use the list [1, 2, "hello"].
+
+
+max() and min() 
+The max() function returns the largest numeric input passed into it. The min() function returns the smallest numeric input passed into it.
+
+The max() and min() functions accept arguments of either multiple numeric values or of an iterable like a list, and they return the largest or smallest value respectively.
+
+For example, you could use these functions to identify the longest or shortest session that a user logged in for. If a specific user logged in seven times during a week, and you stored their access times in minutes in a list, you can use the max() and min() functions to find and print their longest and shortest sessions:
+
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(min(time_list))
+print(max(time_list))
+
+output:
+2
+57
+
+Key takeaways
+Built-in functions are powerful tools in Python that allow you to perform tasks with one simple command. The print() function prints its arguments to the screen, the type() function returns the data type of its argument, the sorted() organizes its argument, and  the min() and max() functions return the smallest and largest values of an iterable respectively.
+
+Returning Values Examples:
+
+def area_triangle(base, height):
+    return base*height/2
+
+No Output
+
+area_a = area_triangle(5,4)
+area_b = area_triangle(7,3)
+
+sum = area_a + area_b
+
+print("The sum of both areas is: " + str(sum))
+
+def area_triangle(base, height):
+    return base*height/2
+area_a = area_triangle(5,4)
+area_b = area_triangle(7,3)
+sum = area_a + area_b
+print("The sum of both areas is: " + str(sum))
+
+def convert_seconds(seconds):
+    hours = seconds // 3600
+    minutes = (seconds - hours * 3600) // 60
+    remaining_seconds = seconds - hours * 3600 - minutes * 60
+    return hours, minutes, remaining_seconds
+
+hours, minutes, seconds = convert_seconds(5000)
+print(hours, minutes, seconds)
+
+def convert_seconds(seconds):
+    hours = seconds // 3600
+    minutes = (seconds - hours * 3600) // 60
+    remaining_seconds = seconds - hours * 3600 - minutes * 60
+    return hours, minutes, remaining_seconds
+ 
+hours, minutes, seconds = convert_seconds(5000)
+print(hours, minutes, seconds)
+
+def greeting(name):
+    print("Welcome, " + name)
+result = greeting("Christine")
+print(result)
+
+
+Introduction
+This follow-along reading is organized to match the content in the video that follows. It contains the same code shown in the next video. These code blocks will provide you with the opportunity to see how the code is written, allow you to practice running it, and can be used as a reference to refer back to. 
+
+You can follow along in the reading as the instructor discusses the code or review the code after watching the video.
+
+name = "Kay"
+number = len(name) * 9
+
+print("Hello " + name + ". Your lucky number is " + str(number))
+
+name = "Cameron"
+number = len(name) * 9
+
+print("Hello " + name + ". Your lucky number is " + str(number))
+
+Output:
+Hello Kay. Your lucky number is 27
+Hello Cameron. Your lucky number is 63
+
+def lucky_number(name):
+    number = len(name) * 9
+    print("Hello " + name + ". Your lucky number is " + str(number))
+
+lucky_number("Kay")
+lucky_number("Cameron")
+
+Output:
+Hello Kay. Your lucky number is 27
+Hello Cameron. Your lucky number is 63
+
+Study guide: Functions
+This study guide provides a quick-reference summary of what you learned in this lesson and serves as a guide for the upcoming practice quiz.  
+
+In the Functions segment, you learned how to define and call functions, utilize a function’s parameters, and return data from a function. You also learned how to differentiate and convert between different data types utilizing variables. Plus, you learned a few best practices for writing reusable and readable code. 
+
+Terms
+return value - the value or variable returned as the end result of a function
+
+parameter (argument) -  a value passed into a function for use within the function
+
+refactoring code - a process to restructure code without changing functionality
+
+Knowledge
+The purpose of the def() keyword is to define a new function. 
+
+Best practices for writing code that is readable and reusable:
+
+Create a reusable function - Replace duplicate code with one reusable function to make the code easier to read and repurpose.
+
+Refactor code - Update code so that it is self-documenting and the intent of the code is clear.
+
+Add comments - Adding comments is part of creating self-documenting code. Using comments allows you to leave notes to yourself and/or other programmers to make the purpose of the code clear.
+
+
+
