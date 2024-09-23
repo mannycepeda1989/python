@@ -1,4 +1,4 @@
-Explore Python syntax
+Explore Python syntaxs
 Python is a flexible programming language used in a wide range of fields, including software development, machine learning, and data analysis. Python is one of the most popular programming languages for data professionals, so getting familiar with its fundamental syntax and semantics will be useful for your future career. In this reading, you will learn about Python’s syntax and semantics, as well as where to find resources to further your learning.
 
 The Language of Python
